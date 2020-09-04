@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Комплексная система мониторинга здоровья</string>
+    <string name="app_name">Комплексная система мониторинга здоровья \nДементьев В.</string>
     <string name="iconHeart">Иконка сердца</string>
     <string name="name">Имя</string>
     <string name="age">Возраст</string>
@@ -11,4 +11,7 @@
     <string name="pulse">Пульс</string>
     <string name="date">Дата</string>
     <string name="tachycardia">Тахикардия</string>
+    <string name="weight">Вес</string>
+    <string name="numberOfSteps">Количество шагов</string>
+    <string name="healthIndicators">Жизненые показатели</string>
 </resources>
