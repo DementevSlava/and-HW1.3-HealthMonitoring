@@ -6,4 +6,9 @@
     <string name="save">Сохранить</string>
     <string name="pressure">Давление</string>
     <string name="health">Здоровье</string>
+    <string name="topPressure">Верхнее давление</string>
+    <string name="bottomPressure">Нижнее давление</string>
+    <string name="pulse">Пульс</string>
+    <string name="date">Дата</string>
+    <string name="tachycardia">Тахикардия</string>
 </resources>
