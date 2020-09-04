@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Комплексная система мониторинга здоровья</string>
+    <string name="iconHeart">Иконка сердца</string>
+    <string name="name">Имя</string>
+    <string name="age">Возраст</string>
+    <string name="save">Сохранить</string>
+    <string name="pressure">Давление</string>
+    <string name="health">Здоровье</string>
+</resources>

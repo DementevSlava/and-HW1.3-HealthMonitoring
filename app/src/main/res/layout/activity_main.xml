@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:contentDescription="@string/iconHeart"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/PersonName"
+        android:layout_width="204dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="172dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appName" />
+
+    <TextView
+        android:id="@+id/iconApp"
+        android:layout_width="409dp"
+        android:layout_height="69dp"
+        android:background="#BEC3DF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="275dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="1dp"
+        android:text="@string/app_name"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iconApp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/age"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PersonName" />
+
+    <Button
+        android:id="@+id/mainBtnSave"
+        android:layout_width="135dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="158dp"
+        android:layout_marginBottom="300dp"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/age" />
+
+    <Button
+        android:id="@+id/pressureBtn"
+        android:layout_width="134dp"
+        android:layout_height="88dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="140dp"
+        android:text="@string/pressure"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/healthBtn" />
+
+    <Button
+        android:id="@+id/healthBtn"
+        android:layout_width="133dp"
+        android:layout_height="88dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="140dp"
+        android:text="@string/health"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainBtnSave"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/icHeart"
+        android:layout_width="104dp"
+        android:layout_height="78dp"
+        android:layout_marginEnd="292dp"
+        android:contentDescription="@string/iconHeart"
+        app:layout_constraintBottom_toBottomOf="@+id/iconApp"
+        app:layout_constraintEnd_toEndOf="@+id/iconApp"
+        app:srcCompat="@drawable/ic_heart_foreground" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
