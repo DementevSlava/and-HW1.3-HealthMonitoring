@@ -1,19 +1,19 @@
 package com.dementev.healthmonitoring;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListAdapter;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    List<Person> userDataList = new ArrayList<>();
+
+    List<Person> users = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,25 +23,26 @@ public class MainActivity extends AppCompatActivity {
         init();
     }
 
-    public void init(){
-        Button mainBtnSave = findViewById(R.id.mainBtnSave);
-        Button pressureBtn = findViewById(R.id.pressureBtn);
-        Button healthBtn = findViewById(R.id.healthBtn);
+    private void init() {
+        Button mainSaveBtn = findViewById(R.id.mainSaveBtn);
+        Button mainPressureBtn = findViewById(R.id.mainPressureBtn);
+        Button mainHealthBtn = findViewById(R.id.mainHealthBtn);
 
-        mainBtnSave.setOnClickListener(new View.OnClickListener() {
+        mainSaveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText name = findViewById(R.id.personName);
-                EditText age = findViewById(R.id.age);
+                EditText personName = findViewById(R.id.editNameField);
+                EditText personAge = findViewById(R.id.editAgeField);
 
-                String personName = name.getText().toString();
-                int personAge = Integer.parseInt(age.getText().toString());
-                Person person = new Person(personName, personAge);
-                userDataList.add(person);
+                String nameValue = personName.getText().toString();
+                int ageValue = Integer.parseInt(personAge.getText().toString());
+
+                Person person = new Person(nameValue, ageValue);
+                users.add(person);
             }
         });
 
-        pressureBtn.setOnClickListener(new View.OnClickListener() {
+        mainPressureBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, PressureActivity.class);
@@ -49,10 +50,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        healthBtn.setOnClickListener(new View.OnClickListener() {
+        mainHealthBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, HealthActivity.class));
+                Intent intent = new Intent(MainActivity.this, HealthActivity.class);
+                startActivity(intent);
             }
         });
     }

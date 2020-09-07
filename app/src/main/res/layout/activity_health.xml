@@ -10,51 +10,84 @@
         android:id="@+id/helthIndicator"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginBottom="191dp"
         android:background="#65ABE3"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/healthIndicators"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/weighField"
+        app:layout_constraintBottom_toTopOf="@+id/stepsLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/weighField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="41dp"
-        android:layout_marginBottom="75dp"
-        android:ems="10"
-        android:hint="@string/weight"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/stepsField"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/helthIndicator"
-        android:autofillHints="" />
-
-    <EditText
-        android:id="@+id/stepsField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="41dp"
-        android:layout_marginBottom="411dp"
-        android:ems="10"
-        android:hint="@string/numberOfSteps"
-        android:inputType="textPersonName"
+    <Button
+        android:id="@+id/healthSaveBtn"
+        android:layout_width="157dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginBottom="254dp"
+        android:text="@string/save"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/weighField"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/stepsLayout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/weighLayout"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="58dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/helthIndicator">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/weighField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/weight" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/stepsLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="93dp"
+        app:layout_constraintBottom_toTopOf="@+id/healthSaveBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/helthIndicator">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/numberOfStepField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/numberOfSteps" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/healthBtn"
-        android:layout_width="157dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="94dp"
-        android:layout_marginTop="88dp"
-        android:text="@string/save"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stepsField" />
+        android:id="@+id/pressureBtn"
+        android:layout_width="178dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="23dp"
+        android:text="@string/pressureIndicators"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/mainHealthBtn"
+        android:layout_width="178dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="23dp"
+        android:text="@string/main"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/pressureBtn"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
