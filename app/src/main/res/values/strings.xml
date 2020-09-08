@@ -17,4 +17,6 @@
     <string name="healthIndicators">Жизненые показатели</string>
     <string name="pressureIndicators">Показатели давления</string>
     <string name="main">На главную</string>
+    <string name="dateFormat">dd/mm/yyyy hh:mm</string>
+    <string name="emptyField">Заполните поле</string>
 </resources>

@@ -7,17 +7,17 @@
     tools:context=".PressureActivity">
 
     <Button
-        android:id="@+id/mainPressureBtn"
+        android:id="@+id/pressureMainBtn"
         android:layout_width="185dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="1dp"
         android:text="@string/main"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button3" />
+        app:layout_constraintTop_toTopOf="@+id/pressureHealthBtn" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/pressureHealthBtn"
         android:layout_width="185dp"
         android:layout_height="0dp"
         android:layout_marginEnd="16dp"
@@ -60,7 +60,7 @@
                 android:layout_marginBottom="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/upperPressure"
+                    android:id="@+id/inputUpperPressure"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="@string/topPressure" />
@@ -73,7 +73,7 @@
                 android:layout_marginBottom="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/lowPressure"
+                    android:id="@+id/inputLowPressure"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/bottomPressure" />
@@ -85,7 +85,7 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/pulseInput"
+                    android:id="@+id/inputPulse"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
@@ -100,7 +100,7 @@
                 android:text="@string/tachycardia" />
 
             <EditText
-                android:id="@+id/editDate"
+                android:id="@+id/inputDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"

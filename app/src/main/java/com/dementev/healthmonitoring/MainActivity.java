@@ -26,13 +26,13 @@ public class MainActivity extends AppCompatActivity {
     private void init() {
         Button mainSaveBtn = findViewById(R.id.mainSaveBtn);
         Button mainPressureBtn = findViewById(R.id.mainPressureBtn);
-        Button mainHealthBtn = findViewById(R.id.mainHealthBtn);
+        Button mainHealthBtn = findViewById(R.id.mainHelthBtn);
 
         mainSaveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText personName = findViewById(R.id.editNameField);
-                EditText personAge = findViewById(R.id.editAgeField);
+                EditText personName = findViewById(R.id.inputNameField);
+                EditText personAge = findViewById(R.id.inputAgeField);
 
                 String nameValue = personName.getText().toString();
                 int ageValue = Integer.parseInt(personAge.getText().toString());

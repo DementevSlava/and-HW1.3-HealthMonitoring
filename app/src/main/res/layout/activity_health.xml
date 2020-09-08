@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/helthIndicator">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/weighField"
+            android:id="@+id/inputWeighField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/weight" />
@@ -62,14 +62,14 @@
         app:layout_constraintTop_toBottomOf="@+id/helthIndicator">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/numberOfStepField"
+            android:id="@+id/inputStepField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/numberOfSteps" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/pressureBtn"
+        android:id="@+id/healthPressureBtn"
         android:layout_width="178dp"
         android:layout_height="54dp"
         android:layout_marginEnd="16dp"
@@ -79,7 +79,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/mainHealthBtn"
+        android:id="@+id/healthMainBtn"
         android:layout_width="178dp"
         android:layout_height="54dp"
         android:layout_marginStart="16dp"
@@ -87,7 +87,7 @@
         android:layout_marginBottom="23dp"
         android:text="@string/main"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/pressureBtn"
+        app:layout_constraintEnd_toStartOf="@+id/healthPressureBtn"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
