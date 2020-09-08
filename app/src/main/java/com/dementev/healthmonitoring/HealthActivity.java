@@ -28,7 +28,7 @@ public class HealthActivity extends AppCompatActivity {
 
     private void init(){
         Button healthSaveBtn = findViewById(R.id.healthSaveBtn);
-        Button healthPressureBtn = findViewById(R.id.healthPressureBtn);
+
         Button healthMainBtn = findViewById(R.id.healthMainBtn);
 
         healthSaveBtn.setOnClickListener(new View.OnClickListener() {
@@ -47,17 +47,12 @@ public class HealthActivity extends AppCompatActivity {
                 healthList.add(health);
             }
         });
-        healthPressureBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HealthActivity.this, PressureActivity.class));
-            }
-        });
+
 
         healthMainBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HealthActivity.this, MainActivity.class));
+                finish();
             }
         });
     }

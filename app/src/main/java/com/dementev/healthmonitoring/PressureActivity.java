@@ -31,7 +31,6 @@ public class PressureActivity extends AppCompatActivity {
     private void init(){
         Button pressureSaveBtn = findViewById(R.id.pressureSaveBtn);
         Button pressureMainBtn = findViewById(R.id.pressureMainBtn);
-        Button pressureHealthBtn = findViewById(R.id.pressureHealthBtn);
 
 
 
@@ -68,16 +67,10 @@ public class PressureActivity extends AppCompatActivity {
         pressureMainBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PressureActivity.this, MainActivity.class));
+                finish();
             }
         });
 
-        pressureHealthBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(PressureActivity.this, HealthActivity.class));
-            }
-        });
     }
 
 }

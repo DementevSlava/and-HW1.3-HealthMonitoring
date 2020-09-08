@@ -6,38 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".HealthActivity">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/healthIndicators"
+        app:layout_constraintBottom_toTopOf="@+id/helthIndicator"
+        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_heart_foreground" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/head"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/helthIndicator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/helthIndicator"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="191dp"
+        android:layout_marginBottom="55dp"
         android:background="#65ABE3"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/healthIndicators"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/stepsLayout"
+        app:layout_constraintBottom_toTopOf="@+id/weighLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <Button
         android:id="@+id/healthSaveBtn"
-        android:layout_width="157dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginEnd="124dp"
-        android:layout_marginBottom="254dp"
+        android:layout_width="175dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="120dp"
         android:text="@string/save"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/stepsLayout" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/weighLayout"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="58dp"
+        android:layout_marginBottom="49dp"
+        app:layout_constraintBottom_toTopOf="@+id/stepsLayout"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/helthIndicator">
 
@@ -53,13 +75,11 @@
         android:id="@+id/stepsLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="93dp"
-        app:layout_constraintBottom_toTopOf="@+id/healthSaveBtn"
+        android:layout_marginBottom="250dp"
+        app:layout_constraintBottom_toTopOf="@+id/healthMainBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/helthIndicator">
+        app:layout_constraintTop_toBottomOf="@+id/weighLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputStepField"
@@ -69,25 +89,14 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/healthPressureBtn"
-        android:layout_width="178dp"
-        android:layout_height="54dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="23dp"
-        android:text="@string/pressureIndicators"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
         android:id="@+id/healthMainBtn"
         android:layout_width="178dp"
-        android:layout_height="54dp"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="23dp"
+        android:layout_marginBottom="34dp"
         android:text="@string/onMain"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/healthPressureBtn"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stepsLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
