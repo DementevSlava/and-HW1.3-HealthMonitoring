@@ -85,7 +85,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="23dp"
-        android:text="@string/main"
+        android:text="@string/onMain"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/healthPressureBtn"
         app:layout_constraintStart_toStartOf="parent" />

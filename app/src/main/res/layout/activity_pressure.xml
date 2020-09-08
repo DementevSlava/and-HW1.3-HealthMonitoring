@@ -12,7 +12,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="1dp"
-        android:text="@string/main"
+        android:text="@string/onMain"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/pressureHealthBtn" />
 
