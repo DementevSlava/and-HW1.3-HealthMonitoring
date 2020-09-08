@@ -31,29 +31,21 @@ public class HealthActivity extends AppCompatActivity {
 
         Button healthMainBtn = findViewById(R.id.healthMainBtn);
 
-        healthSaveBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TextInputLayout weighLayout = findViewById(R.id.weighLayout);
-                TextInputLayout stepsLayout = findViewById(R.id.stepsLayout);
+        healthSaveBtn.setOnClickListener(v -> {
+            TextInputLayout weighLayout = findViewById(R.id.weighLayout);
+            TextInputLayout stepsLayout = findViewById(R.id.stepsLayout);
 
-                EditText inputWeighField = findViewById(R.id.inputWeighField);
-                EditText inputStepField = findViewById(R.id.inputStepField);
+            EditText inputWeighField = findViewById(R.id.inputWeighField);
+            EditText inputStepField = findViewById(R.id.inputStepField);
 
-                float weight = Float.parseFloat(inputWeighField.getText().toString());
-                int steps = Integer.parseInt(inputStepField.getText().toString());
+            float weight = Float.parseFloat(inputWeighField.getText().toString());
+            int steps = Integer.parseInt(inputStepField.getText().toString());
 
-                Health health = new Health(weight, steps);
-                healthList.add(health);
-            }
+            Health health = new Health(weight, steps);
+            healthList.add(health);
         });
 
 
-        healthMainBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        healthMainBtn.setOnClickListener(v -> finish());
     }
 }

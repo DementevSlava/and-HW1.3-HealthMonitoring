@@ -28,9 +28,7 @@ public class MainActivity extends AppCompatActivity {
         Button mainPressureBtn = findViewById(R.id.mainPressureBtn);
         Button mainHealthBtn = findViewById(R.id.mainHelthBtn);
 
-        mainSaveBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        mainSaveBtn.setOnClickListener((v) -> {
                 EditText personName = findViewById(R.id.inputNameField);
                 EditText personAge = findViewById(R.id.inputAgeField);
 
@@ -39,23 +37,18 @@ public class MainActivity extends AppCompatActivity {
 
                 Person person = new Person(nameValue, ageValue);
                 users.add(person);
-            }
+
         });
 
-        mainPressureBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        mainPressureBtn.setOnClickListener(v -> {
                 Intent intent = new Intent(MainActivity.this, PressureActivity.class);
                 startActivity(intent);
-            }
+
         });
 
-        mainHealthBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, HealthActivity.class);
-                startActivity(intent);
-            }
+        mainHealthBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, HealthActivity.class);
+            startActivity(intent);
         });
     }
 }

@@ -34,42 +34,33 @@ public class PressureActivity extends AppCompatActivity {
 
 
 
-        pressureSaveBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText pUp = findViewById(R.id.inputUpperPressure);
-                EditText pDown = findViewById(R.id.inputLowPressure);
-                EditText pulse = findViewById(R.id.inputPulse);
-                CheckBox tachycardia = findViewById(R.id.checkBox);
-                EditText date = findViewById(R.id.inputDate);
+        pressureSaveBtn.setOnClickListener(v -> {
+
+            EditText pUp = findViewById(R.id.inputUpperPressure);
+            EditText pDown = findViewById(R.id.inputLowPressure);
+            EditText pulse = findViewById(R.id.inputPulse);
+            CheckBox tachycardia = findViewById(R.id.checkBox);
+            EditText date = findViewById(R.id.inputDate);
+
+            int pUpValue = Integer.parseInt(pUp.getText().toString());
+            int pDownValue = Integer.parseInt(pDown.getText().toString());
+            int pulseValue = Integer.parseInt(pulse.getText().toString());
+
+            boolean tachycardiaValue = tachycardia.isChecked();
 
 
-
-                int pUpValue = Integer.parseInt(pUp.getText().toString());
-                int pDownValue = Integer.parseInt(pDown.getText().toString());
-                int pulseValue = Integer.parseInt(pulse.getText().toString());
-
-                boolean tachycardiaValue = tachycardia.isChecked();
-
-
-                SimpleDateFormat sdf = new SimpleDateFormat(getString(R.string.dateFormat));
-                try {
-                    measureDate = sdf.parse(date.getText().toString());
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-
-                Pressure pressure = new Pressure(pUpValue, pDownValue, pulseValue, tachycardiaValue);
-                datePressureMap.put(measureDate, pressure);
+            SimpleDateFormat sdf = new SimpleDateFormat(getString(R.string.dateFormat));
+            try {
+                measureDate = sdf.parse(date.getText().toString());
+            } catch (ParseException e) {
+                e.printStackTrace();
             }
+
+            Pressure pressure = new Pressure(pUpValue, pDownValue, pulseValue, tachycardiaValue);
+            datePressureMap.put(measureDate, pressure);
         });
 
-        pressureMainBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        pressureMainBtn.setOnClickListener(v -> finish());
 
     }
 
