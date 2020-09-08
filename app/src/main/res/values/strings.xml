@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">КСМЗ</string>
     <string name="head">Комплексная система мониторинга здоровья \nДементьев В.</string>
-    <string name="iconHeart">Иконка сердца</string>
+    <string name="icon_heart">Иконка сердца</string>
     <string name="name">Имя</string>
     <string name="age">Возраст</string>
     <string name="save">Сохранить</string>
