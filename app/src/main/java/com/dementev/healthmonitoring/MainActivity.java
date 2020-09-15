@@ -2,6 +2,7 @@ package com.dementev.healthmonitoring;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "Начало лога";
+    private static final String TAG = "Лог MainActivity";
     List<Person> users = new ArrayList<>();
     int ageValue;
     String nameValue;
@@ -44,8 +45,10 @@ public class MainActivity extends AppCompatActivity {
                 TextInputLayout nameLayout = findViewById(R.id.nameLayout);
                 TextInputLayout ageLayout = findViewById(R.id.ageLayout);
 
+                Log.i(TAG, "Ввод персональных данных пациента.");
                 if (personName.getText().length() == 0) {
                     nameLayout.setError(MainActivity.this.getString(R.string.name_input));
+                    Log.i(TAG, "Не ввели имя");
                 } else {
                     nameValue = personName.getText().toString();
                 }
@@ -53,16 +56,19 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     if (personAge.getText().length() == 0) {
                         ageLayout.setError(MainActivity.this.getString(R.string.age_input));
+                        Log.i(TAG, "Не ввели возраст");
                     } else {
                         ageValue = Integer.parseInt(personAge.getText().toString());
                     }
-                } catch (NumberFormatException e) {
-                    Toast.makeText(MainActivity.this, "Неверный формат", Toast.LENGTH_SHORT).show();
+                } catch (NumberFormatException ex) {
+                    Toast.makeText(MainActivity.this, R.string.wrong_format, Toast.LENGTH_SHORT).show();
+                    Log.e(TAG, "Неверный формат возраста", ex);
                 }
 
                 Person person = new Person(nameValue, ageValue);
                 users.add(person);
-                Toast.makeText(MainActivity.this, "Данные сохранены", Toast.LENGTH_SHORT).show();
+                Log.i(TAG, "Добавление пользователя");
+                Toast.makeText(MainActivity.this, R.string.data_saved, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -71,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, PressureActivity.class);
                 MainActivity.this.startActivity(intent);
-
+                Log.i(TAG, "Переход к показателям давления");
             }
         });
 
@@ -80,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, HealthActivity.class);
                 MainActivity.this.startActivity(intent);
+                Log.i(TAG, "Переход к жизненым показателям");
             }
         });
     }

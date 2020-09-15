@@ -17,9 +17,16 @@
     <string name="healthIndicators">Жизненые показатели</string>
     <string name="pressureIndicators">Показатели давления</string>
     <string name="onMain">На главную</string>
-    <string name="dateFormat">dd/mm/yyyy hh:mm</string>
+    <string name="dateFormat">dd/mm/yyyy</string>
+    <string name="timeFormat">hh:mm</string>
     <string name="emptyField">Заполните поле</string>
     <string name="name_input">Введите имя</string>
     <string name="age_input">Введите возраст</string>
     <string name="high_pressure_input">Введите верхнее давление</string>
+    <string name="low_pressure_input">Введите нижнее давление</string>
+    <string name="pulse_input">Введите пульс</string>
+    <string name="data_saved">Данные сохранены</string>
+    <string name="wrong_format">Неверный формат</string>
+    <string name="weight_input">Введите вес</string>
+    <string name="steps_input">Введите количество шагов за день</string>
 </resources>
