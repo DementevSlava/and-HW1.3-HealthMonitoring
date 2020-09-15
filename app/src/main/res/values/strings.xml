@@ -19,4 +19,7 @@
     <string name="onMain">На главную</string>
     <string name="dateFormat">dd/mm/yyyy hh:mm</string>
     <string name="emptyField">Заполните поле</string>
+    <string name="name_input">Введите имя</string>
+    <string name="age_input">Введите возраст</string>
+    <string name="high_pressure_input">Введите верхнее давление</string>
 </resources>

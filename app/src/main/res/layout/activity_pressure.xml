@@ -113,7 +113,7 @@
             android:layout_marginBottom="16dp"
             android:autofillHints=""
             android:ems="10"
-            android:hint="@string/date"
+            android:hint="@string/dateFormat"
             android:inputType="date" />
 
         <Button

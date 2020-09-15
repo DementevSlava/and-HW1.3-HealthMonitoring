@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -19,6 +21,8 @@ public class PressureActivity extends AppCompatActivity {
 
     Map<Date, Pressure> datePressureMap = new HashMap<>();
     Date measureDate;
+
+    int pUpValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,33 +38,51 @@ public class PressureActivity extends AppCompatActivity {
 
 
 
-        pressureSaveBtn.setOnClickListener(v -> {
+        pressureSaveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-            EditText pUp = findViewById(R.id.inputUpperPressure);
-            EditText pDown = findViewById(R.id.inputLowPressure);
-            EditText pulse = findViewById(R.id.inputPulse);
-            CheckBox tachycardia = findViewById(R.id.checkBox);
-            EditText date = findViewById(R.id.inputDate);
+                TextInputLayout upperLayout = findViewById(R.id.upperLayout);
+                TextInputLayout lowLayout = findViewById(R.id.lowLayout);
+                TextInputLayout pulseLayout = findViewById(R.id.pulseLayout);
 
-            int pUpValue = Integer.parseInt(pUp.getText().toString());
-            int pDownValue = Integer.parseInt(pDown.getText().toString());
-            int pulseValue = Integer.parseInt(pulse.getText().toString());
+                EditText pUp = PressureActivity.this.findViewById(R.id.inputUpperPressure);
+                EditText pDown = PressureActivity.this.findViewById(R.id.inputLowPressure);
+                EditText pulse = PressureActivity.this.findViewById(R.id.inputPulse);
+                CheckBox tachycardia = PressureActivity.this.findViewById(R.id.checkBox);
+                EditText date = PressureActivity.this.findViewById(R.id.inputDate);
 
-            boolean tachycardiaValue = tachycardia.isChecked();
+                try {
+                    pUpValue = Integer.parseInt(pUp.getText().toString());
+                } catch (Exception e) {
+                    upperLayout.setError(PressureActivity.this.getString(R.string.high_pressure_input));
+                }
 
 
-            SimpleDateFormat sdf = new SimpleDateFormat(getString(R.string.dateFormat));
-            try {
-                measureDate = sdf.parse(date.getText().toString());
-            } catch (ParseException e) {
-                e.printStackTrace();
+                int pDownValue = Integer.parseInt(pDown.getText().toString());
+                int pulseValue = Integer.parseInt(pulse.getText().toString());
+
+                boolean tachycardiaValue = tachycardia.isChecked();
+
+
+                SimpleDateFormat sdf = new SimpleDateFormat(PressureActivity.this.getString(R.string.dateFormat));
+                try {
+                    measureDate = sdf.parse(date.getText().toString());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                Pressure pressure = new Pressure(pUpValue, pDownValue, pulseValue, tachycardiaValue);
+                datePressureMap.put(measureDate, pressure);
             }
-
-            Pressure pressure = new Pressure(pUpValue, pDownValue, pulseValue, tachycardiaValue);
-            datePressureMap.put(measureDate, pressure);
         });
 
-        pressureMainBtn.setOnClickListener(v -> finish());
+        pressureMainBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PressureActivity.this.finish();
+            }
+        });
 
     }
 
